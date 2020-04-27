@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="fragments/head :: head">
+</th:block>
+<body>
+
+    <div class="page">
+        <th:block th:include="fragments/header :: header"></th:block>
+        <div class="my-3 my-md-5">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">
+                        Users
+                    </h1>
+                    <div class="page-subtitle">1 - 20 of 1713 users</div>
+                    <div class="page-options d-flex">
+                        <select class="form-control custom-select w-auto">
+                            <option value="asc">Newest</option>
+                            <option value="desc">Oldest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row row-cards">
+                    <div class="col-lg-4">
+                        <form class="card">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="form-label">Filter</div>
+                                    <input type="text" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">Calendar</div>
+                                    <input type="text" class="form-control"/>
+                                </div>
+
+
+                            </div>
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <table class="table card-table table-vcenter">
+                                <tr>
+                                    <th class="w-1"></th>
+                                    <th class="w-1"></th>
+                                    <th>Name</th>
+                                    <th class="d-none d-sm-table-cell">Date</th>
+                                    <th class="d-none d-md-table-cell">Amount</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/female/25.jpg)"></span></td>
+                                    <td>Jane Pearson</td>
+                                    <td class="d-none d-sm-table-cell">February 10, 1994</td>
+                                    <td class="d-none d-md-table-cell">$1616.70</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/male/9.jpg)"></span></td>
+                                    <td>Jason Porter</td>
+                                    <td class="d-none d-sm-table-cell">November 14, 1983</td>
+                                    <td class="d-none d-md-table-cell">$1397.56</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/female/25.jpg)"></span></td>
+                                    <td>Teresa Wood</td>
+                                    <td class="d-none d-sm-table-cell">February 02, 1988</td>
+                                    <td class="d-none d-md-table-cell">$675.89</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/female/16.jpg)"></span></td>
+                                    <td>Mary Butler</td>
+                                    <td class="d-none d-sm-table-cell">November 12, 1982</td>
+                                    <td class="d-none d-md-table-cell">$600.25</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/male/20.jpg)"></span></td>
+                                    <td>Christopher Harvey</td>
+                                    <td class="d-none d-sm-table-cell">December 09, 1984</td>
+                                    <td class="d-none d-md-table-cell">$1699.24</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/female/5.jpg)"></span></td>
+                                    <td>Deborah Alvarado</td>
+                                    <td class="d-none d-sm-table-cell">April 02, 1993</td>
+                                    <td class="d-none d-md-table-cell">$1936.02</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="" value="">
+                                            <div class="custom-control-label"></div>
+                                        </label>
+                                    </th>
+                                    <td><span class="avatar d-block rounded" style="background-image: url(/demo/faces/male/10.jpg)"></span></td>
+                                    <td>Gregory Hunt</td>
+                                    <td class="d-none d-sm-table-cell">June 30, 1991</td>
+                                    <td class="d-none d-md-table-cell">$689.86</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <ul class="pagination ">
+                            <li class="page-item page-prev disabled">
+                                <a class="page-link" href="#" tabindex="-1">
+                                    Prev
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item page-next">
+                                <a class="page-link" href="#">
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <th:block th:include="fragments/footer :: footer"></th:block>
+    </div>
+
+</body>
+</html>

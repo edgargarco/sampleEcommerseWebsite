@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="fragments/head :: head">
+</th:block>
+<body>
+
+    <div class="page">
+        <th:block th:include="fragments/header :: header" th:replace="fragments/header :: header(content=${sellerUser.firstName} +${sellerUser.lastName})"></th:block>
+        <div class="my-3 my-md-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-3"></div>
+                    <div class="col-lg-8 col-md-6 col-sm-10">
+                        <form class="card" th:action="@{/product/create}" th:object="${product}"  method="post">
+                            <div class="card-body">
+                                <h3 class="card-title">Registro nuevo producto</h3>
+                                <div class="row">
+                                    <div class="col-md-5">
+
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Título</label>
+                                            <input type="text" class="form-control" placeholder="Título del producto" name="title" th:field="*{title}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Marca</label>
+                                            <input type="text" class="form-control" placeholder="Marca" name="brand" th:field="*{brand}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Modelo</label>
+                                            <input type="text" class="form-control" placeholder="Modelo" name="model" th:field="*{model}" >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Tamaño</label>
+                                            <input type="text" class="form-control" placeholder="Tamaño" name="dimensions" th:field="*{dimensions}" >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Material</label>
+                                            <select name="beast" id="select-beast" class="form-control custom-select" th:field="*{material}" th:name="material">
+                                                <option th:value="1">Aluminio</option>
+                                                <option th:value="2">Plastico</option>
+                                                <option th:value="3">Metal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Color Input</label>
+                                            <div class="row gutters-xs">
+                                                <div class="col-auto">
+                                                    <label class="colorinput">
+                                                        <input name="color" type="checkbox" value="azure" class="colorinput-input" />
+                                                        <span class="colorinput-color bg-azure"></span>
+                                                    </label>
+                                                </div>
+
+
+                                                <div class="col-auto">
+                                                    <label class="colorinput">
+                                                        <input name="color" type="checkbox" value="pink" class="colorinput-input" />
+                                                        <span class="colorinput-color bg-pink"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <label class="colorinput">
+                                                        <input name="color" type="checkbox" value="red" class="colorinput-input" />
+                                                        <span class="colorinput-color bg-red"></span>
+                                                    </label>
+                                                </div>
+
+
+                                                <div class="col-auto">
+                                                    <label class="colorinput">
+                                                        <input name="color" type="checkbox" value="dark" class="colorinput-input" />
+                                                        <span class="colorinput-color bg-dark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <label class="colorinput">
+                                                        <input name="color" type="checkbox" value="ligth" class="colorinput-input" />
+                                                        <span class="colorinput-color bg-ligth"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <label class="colorinput">
+                                                        <input name="color" type="checkbox" value="gray" class="colorinput-input" />
+                                                        <span class="colorinput-color bg-gray"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <div class="form-label">Compatible</div>
+                                            <div>
+                                                <label class="custom-control custom-checkbox custom-control-inline">
+                                                    <input type="checkbox" class="custom-control-input" name="example-inline-checkbox1" value="option1" checked>
+                                                    <span class="custom-control-label">Iphone</span>
+                                                </label>
+                                                <label class="custom-control custom-checkbox custom-control-inline">
+                                                    <input type="checkbox" class="custom-control-input" name="example-inline-checkbox2" value="option2">
+                                                    <span class="custom-control-label">Android</span>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Tags</label>
+                                            <input type="text" class="form-control" id="input-tags" >
+                                        </div>
+                                    </div>
+                                    <script>
+                                        require(['jquery', 'selectize'], function ($, selectize) {
+                                            $(document).ready(function(){
+                                                $('#input-tags').selectize({
+                                                    delimiter: ',',
+                                                    persist: false,
+                                                    create: function (input) {
+                                                        return {
+                                                            value: input,
+                                                            text: input
+                                                        }
+                                                    }
+                                                });
+                                            })
+                                        });
+                                    </script>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Descripción</label>
+                                            <textarea rows="5" class="form-control" placeholder="Descripción del articulo" th:name="description" th:field="*{description}" >  </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary">Registrar producto</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <th:block th:include="fragments/footer :: footer"></th:block>
+    </div>
+
+</body>
+</html>
