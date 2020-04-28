@@ -14,7 +14,7 @@ import java.util.List;
 @MappedSuperclass
 public class GenericUser<T> implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Size(min=2, max=40,message = "Este campo debe tener entre 2 y 40 caracteres")
